@@ -1,0 +1,16 @@
+{
+    "name": "julioreis/urlshorter",
+    "require": {
+        "silex/silex": "v1.3.0",
+        "doctrine/dbal": "v2.5.1",
+        "dflydev/doctrine-orm-service-provider": "1.0.6",
+        "silex/web-profiler": "^1.0",
+        "sorien/silex-dbal-profiler": "^1.1",
+        "respect/validation": "^0.9.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src"
+        }
+    }
+}

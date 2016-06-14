@@ -8,24 +8,24 @@ apt-get install git -y > /dev/null
 
 # PHP
 echo "Updating PHP repository"
-apt-get install python-software-properties build-essential -y > /dev/null
-add-apt-repository ppa:ondrej/php5 -y > /dev/null
+apt-get install python-software-properties build-essential -y > /dev/null --force-yes
+add-apt-repository ppa:ondrej/php5 -y > /dev/null --force-yes
 apt-get update > /dev/null
 
 echo "Installing PHP"
-apt-get install php5-common php5-dev php5-cli php5-fpm -y > /dev/null
+apt-get install php5-common php5-dev php5-cli php5-fpm -y > /dev/null --force-yes
 
 echo "Installing PHP extensions"
-apt-get install curl php5-curl php5-gd php5-mcrypt php5-mysql php-apc -y > /dev/null
+apt-get install curl php5-curl php5-gd php5-mcrypt php5-mysql php-apc -y > /dev/null --force-yes
 
 # MySQL
 #echo "Preparing MySQL"
-#apt-get install debconf-utils -y > /dev/null
+#apt-get install debconf-utils -y > /dev/null --force-yes
 #debconf-set-selections <<< "mysql-server mysql-server/root_password password abc123"
 #debconf-set-selections <<< "mysql-server mysql-server/root_password_again password abc123"
 
 #echo "Installing MySQL"
-#apt-get install mysql-server -y > /dev/null
+#apt-get install mysql-server -y > /dev/null --force-yes
 
 #echo "Creating database"
 #MyUSER="root"

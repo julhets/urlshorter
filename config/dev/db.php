@@ -4,7 +4,7 @@ return [
     'driver' => 'pdo_mysql',
     'host' => 'localhost',
     'user' => 'root',
-    'password' => '1402julio',
+    'password' => 'abc123',
     'dbname' => 'urlshorter',
     'charset' => 'utf8',
 ];

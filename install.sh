@@ -19,33 +19,37 @@ echo "Installing PHP extensions"
 apt-get install curl php5-curl php5-gd php5-mcrypt php5-mysql php-apc -y > /dev/null
 
 # MySQL
-echo "Preparing MySQL"
-apt-get install debconf-utils -y > /dev/null
-debconf-set-selections <<< "mysql-server mysql-server/root_password password abc123"
-debconf-set-selections <<< "mysql-server mysql-server/root_password_again password abc123"
+#echo "Preparing MySQL"
+#apt-get install debconf-utils -y > /dev/null
+#debconf-set-selections <<< "mysql-server mysql-server/root_password password abc123"
+#debconf-set-selections <<< "mysql-server mysql-server/root_password_again password abc123"
 
-echo "Installing MySQL"
-apt-get install mysql-server -y > /dev/null
+#echo "Installing MySQL"
+#apt-get install mysql-server -y > /dev/null
 
-echo "Creating database"
-MyUSER="root"
-MyPASS="abc123"
-HostName="127.0.0.1"
-dbName="urlshorter"
+#echo "Creating database"
+#MyUSER="root"
+#MyPASS="abc123"
+#HostName="127.0.0.1"
+#dbName="urlshorter"
 
-mysql -u $MyUSER -p$MyPASS -Bse "CREATE DATABASE $dbName;"
+#mysql -u $MyUSER -p$MyPASS -Bse "CREATE DATABASE $dbName;"
 
-echo "Installing Composer"
-curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+#echo "Installing Composer"
+#curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
-echo "Downloading application"
-cd
-mkdir appdesafio
-cd appdesafio
-git clone https://github.com/julhets/urlshorter.git
+#echo "Downloading application"
+#cd
+#mkdir appdesafio
+#cd appdesafio
+#git clone https://github.com/julhets/urlshorter.git
 
-echo "Installing bundles with Composer"
-cd ~/appdesafio/urlshorter
-composer install
+#echo "Installing bundles with Composer"
+#cd ~/appdesafio/urlshorter
+#composer install
+
+#echo "Creating DB schema"
+#cd ~/appdesafio/urlshorter
+#vendor/bin/doctrine orm:schema-tool:create
 
 echo "Finished install."

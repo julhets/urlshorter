@@ -2,24 +2,18 @@
 
 ##A REST API for Urlshorter Services.
 
-* Pre requisites:
-UPDATE SYSTEM
-sudo apt-get update
-MYSQL
-sudo apt-get install mysql-server
-PHP-APC
-sudo apt-get install php-apc
-CURL
-sudo apt-get install curl
-PHP-CLI
-sudo apt-get php5-cli
-GIT
-sudo apt-get git
-Composer
-curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+* Arquitetura
+- O framework utilizado para desenvolvimento da API foi o Silex, que é baseado em Symfony;
+    - A estrutura está bem enxuta com o básico para rodar o serviço;
+    - Seguindo o padrão Silex, temos os "Providers" (roteadores), "Repositories" (acesso ao banco), "Resources" (lógica da aplicação) e os "ValueObjects" (entidades).
 
-* Creating schema
-vendor/bin/doctrine orm:schema-tool:create
+- O banco de dados utilizado foi o Mysql e o servidor de aplicação foi o próprio embedd do Silex.
 
-* Starting server
-sudo php -S localhost:8999 -t public/
+* Instalação
+1. Ao descompactar o .zip, a pasta da aplicação "urlshorter" conterá o arquivo install.sh;
+2. O install.sh instalará todas as dependências do projeto (git, composer, PHP, e extensões do PHP);
+3. Como foi informado que, caso haja um banco de dados, ele será instalado num servidor a parte, será necessário criar um banco de dados com o nome "urlshorter". O endereço do host, usuário e senha evem ser configurados no arquivo: "urlshorter/config/dev/db.php"
+4. Execute o comando: "composer install" na pasta raiz da aplicação;
+5. Execute o comando: "vendor/bin/doctrine orm:schema-tool:create" na raiz da aplicação - Esse comando criará as entidades no banco de dados;
+5. Execute o start.sh (que também se encontra na raiz da aplicação). Ele iniciará o servidor de aplicação e deverá ser executado dentro da pasta raiz da aplicação;
+6. Teste a API acessando: http://localhost:8999

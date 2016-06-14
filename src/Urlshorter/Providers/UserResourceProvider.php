@@ -51,7 +51,7 @@ class UserResourceProvider extends CommonResourceProvider implements
             ->assert('id', '\d+');
 
         //DELETE /user/:userId
-        $resources->delete('/users/{id}', 'resources.user:deleteUser')
+        $resources->delete('/user/{id}', 'resources.user:deleteUser')
             ->assert('id', '\d+');
 
         //GET /stats

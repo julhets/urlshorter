@@ -2,8 +2,9 @@
 
 return [
     'driver' => 'pdo_mysql',
+    'host' => 'localhost',
     'user' => 'root',
-    'password' => 'abc123',
+    'password' => '1402julio',
     'dbname' => 'urlshorter',
     'charset' => 'utf8',
 ];

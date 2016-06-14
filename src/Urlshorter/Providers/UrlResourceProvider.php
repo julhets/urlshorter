@@ -37,35 +37,6 @@ class UrlResourceProvider extends CommonResourceProvider implements
   {
     $resources = $app['controllers_factory'];
 
-//        $resources->get('', 'resources.customer:all')
-//            ->assert('websiteId', '\d+');
-//
-//        $resources->get('/customers', 'resources.customer:allByWebsite')
-//            ->assert('websiteId', '\d+');
-//
-//        $resources->get('/customers/{id}', 'resources.customer:one')
-//            ->assert('id', '\d+');
-//
-//        $resources->get('{storeId}/customers', 'resources.customer:allByStore')
-//            ->assert('websiteId', '\d+')
-//            ->assert('storeId', '\d+');
-//
-//        $resources->get('/customers/{id}', 'resources.customer:oneByWebsite')
-//            ->assert('websiteId', '\d+')
-//            ->assert('id', '\d+');
-//
-//        $resources->get('{storeId}/customers/{id}', 'resources.customer:oneByStore')
-//            ->assert('websiteId', '\d+')
-//            ->assert('storeId', '\d+')
-//            ->assert('id', '\d+');
-//
-//        $resources->post('/customers', 'resources.customer:createByWebsite')
-//            ->assert('websiteId', '\d+');
-//
-//        $resources->put('/customers/{id}', 'resources.customer:updateByWebsite')
-//            ->assert('websiteId', '\d+')
-//            ->assert('id', '\d+');
-
     //GET /urls/:id
     $resources->get('/urls/{id}', 'resources.url:getUrlRedirectById')
         ->assert('id', '\d+');
